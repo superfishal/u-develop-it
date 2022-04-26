@@ -70,7 +70,7 @@ router.post("/candidate", ({ body }, res) => {
   });
 });
 // Update a candidate's party
-router.put("/api/candidate/:id", (req, res) => {
+router.put("/candidate/:id", (req, res) => {
   const errors = inputCheck(req.body, "party_id");
 
   if (errors) {
@@ -98,7 +98,7 @@ router.put("/api/candidate/:id", (req, res) => {
   });
 });
 // Delete a candidate
-router.delete("/api/candidate/:id", (req, res) => {
+router.delete("/candidate/:id", (req, res) => {
   const sql = `SELECT candidates.*, parties.name 
                AS party_name 
                FROM candidates 
